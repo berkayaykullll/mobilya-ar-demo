@@ -30,7 +30,7 @@
       width: 100%;
       height: 80vh;
       background-color: #ffffff;
-      /* Mobil ekranlarda sayfa kaydırma ile 3D etkileşimin çakışmasını önler */
+      /* Mobil cihazlarda sayfa kaydırma ile 3D etkileşimin çakışmasını önler */
       touch-action: pan-y;
     }
   </style>
@@ -40,7 +40,7 @@
 
 <h1>Mobilya AR Demo</h1>
 
-<!-- Mobil Kamera Açısı Kilitli AR Görüntüleyici -->
+<!-- iOS (.usdz) ve Android (.glb) Destekli AR Görüntüleyici -->
 <model-viewer
     src="sehpa.glb"
     ios-src="sehpa.usdz"
@@ -48,9 +48,8 @@
     ar
     ar-placement="floor"
     ar-scale="fixed"
-    ar-modes="webxr scene-viewer quick-look"
+    ar-modes="quick-look scene-viewer webxr"
     camera-controls
-    camera-orbit="0deg 75deg 100%"
     shadow-intensity="1">
 </model-viewer>
 
