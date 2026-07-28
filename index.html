@@ -5,25 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mobilya AR Demo</title>
 
-  <!-- Google Model Viewer Scripti -->
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <!-- Google Model Viewer Resmi CDN Scripti -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: #f5f5f5;
       text-align: center;
     }
 
     h1 {
-      margin-top: 20px;
+      margin: 20px 0 10px 0;
+      font-size: 1.5rem;
+      color: #333;
     }
 
     model-viewer {
       width: 100%;
       height: 80vh;
-      background: white;
+      background-color: #ffffff;
+      /* Mobil ekranlarda sayfa kaydırma ile 3D etkileşimin çakışmasını önler */
+      touch-action: pan-y;
     }
   </style>
 </head>
@@ -32,15 +40,17 @@
 
 <h1>Mobilya AR Demo</h1>
 
-<!-- İlk Çalışan Kararlı AR Kodu -->
+<!-- Mobil Kamera Açısı Kilitli AR Görüntüleyici -->
 <model-viewer
     src="sehpa.glb"
+    ios-src="sehpa.usdz"
     alt="3D Sehpa Modeli"
     ar
     ar-placement="floor"
+    ar-scale="fixed"
     ar-modes="webxr scene-viewer quick-look"
     camera-controls
-    auto-rotate
+    camera-orbit="0deg 75deg 100%"
     shadow-intensity="1">
 </model-viewer>
 
