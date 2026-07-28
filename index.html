@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mobilya AR Demo</title>
 
-  <!-- Google Model Viewer Resmi CDN Scripti -->
+  <!-- Google Model Viewer Scripti -->
   <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 
   <style>
@@ -32,14 +32,13 @@
 
 <h1>Mobilya AR Demo</h1>
 
-<!-- AR Görüntüleyici Kodu -->
+<!-- Sadece sehpa.glb kullanan AR Görüntüleyici -->
 <model-viewer
     src="sehpa.glb"
-    ios-src="sehpa.usdz"
     alt="3D Sehpa Modeli"
     ar
     ar-placement="floor"
-    ar-modes="quick-look scene-viewer webxr"
+    ar-modes="webxr scene-viewer quick-look"
     camera-controls
     auto-rotate
     shadow-intensity="1">
